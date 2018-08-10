@@ -1,5 +1,6 @@
 package com.lerr.demo.service.impl;
 
+import com.lerr.demo.mapper.dao.custom.PersonCustomMapper;
 import com.lerr.demo.mapper.dao.gen.PersonMapper;
 import com.lerr.demo.model.gen.Person;
 import com.lerr.demo.model.gen.PersonExample;
@@ -14,6 +15,8 @@ public class PersonServiceImpl implements PersonService {
 
     @Autowired
     PersonMapper personMapper;
+    @Autowired
+    PersonCustomMapper personCustomMapper;
 
     @Override
     public Person getPersonByName(String name) {
@@ -22,5 +25,10 @@ public class PersonServiceImpl implements PersonService {
         criteria.andNameEqualTo(name);
         List<Person> persons = personMapper.selectByExample(personExample);
         return persons.get(0);
+    }
+
+    @Override
+    public Person getCustomPersonByName(String name) {
+        return personCustomMapper.selectPersonByName(name);
     }
 }

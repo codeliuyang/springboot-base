@@ -6,4 +6,6 @@ public interface PersonService {
 
     Person getPersonByName(String name);
 
+    Person getCustomPersonByName(String name);
+
 }
