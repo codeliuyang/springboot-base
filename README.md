@@ -27,3 +27,8 @@ MyBatis Generator 能够对应每张表生成对应的实体、mapper xml以及m
 该Generator简化开发步骤，直接提供可用的实体和持久层(或即repository层)
 
 如果你是IDEA开发，直接找到mybatis-generator:generate双击即可
+
+### Swagger
+Swagger现在常用于API管理。与工程结合起来，非常方便。只要工程提供服务，则可以访问。
+
+同时也能规范项目的API文档和整理。不用再另起excel或者word这种东西了。
