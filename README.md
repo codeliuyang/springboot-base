@@ -8,6 +8,38 @@ MyBatis
 
 LogBack
 
+## Structure Of Project
+````
+|- /src
+  |- /main
+    |- /java
+      |- /com/lerr/demo
+        |- /api
+        |- /config
+          |- Swagger2.java
+        |- /dto
+        |- /mapper/dao
+          |- /custom
+          |- /gen
+        |- /model/gen
+        |- /service
+          |- /impl
+        |- /vo
+      |- SpringbootBaseDemoApplication.java
+    |- /resources
+      |- /mybatis/mapper/xml/gen
+      |- /static
+      |- /templates
+      |- application.properties
+      |- application-dev.properties
+      |- application-prod.properties
+      |- application-test.properties
+      |- generatorConfig.xml
+      |- logback-spring.xml
+|- pom.xml
+|- READE.md
+````
+
 ### Spring Boot
 SpringBoot简化了很多相关的工程配置，几乎不需要任何xml配置，即可一键构建我们需要的web工程。同时内嵌Tomcat。
 
