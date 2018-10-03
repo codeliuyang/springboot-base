@@ -23,18 +23,18 @@ public class PersonApi {
     @Autowired
     PersonService personService;
 
-    @ApiOperation(value = "根据person信息查询person", notes="用生成xml与mapper通过方法名映射，查询数据")
+    @ApiOperation(value = "根据person信息查询person", notes = "用生成xml与mapper通过方法名映射，查询数据")
     @GetMapping("/gen")
-    public PersonDto getPersonByName(@Valid @ApiParam(value="请求人信息", required = true) PersonVo personVo){
+    public PersonDto getPersonByName(@Valid @ApiParam(value = "请求人信息", required = true) PersonVo personVo) {
         PersonDto personDto = new PersonDto();
         BeanUtils.copyProperties(personService.getPersonByName(personVo.getName()),
                 personDto);
         return personDto;
     }
 
-    @ApiOperation(value = "根据person信息查询person", notes="直接用注解的方式写sql，查询数据")
+    @ApiOperation(value = "根据person信息查询person", notes = "直接用注解的方式写sql，查询数据")
     @GetMapping("/custom")
-    public PersonDto getCustomPersonByName(@Valid PersonVo personVo){
+    public PersonDto getCustomPersonByName(@Valid PersonVo personVo) {
         PersonDto personDto = new PersonDto();
         BeanUtils.copyProperties(personService.getCustomPersonByName(personVo.getName()),
                 personDto);

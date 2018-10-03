@@ -5,7 +5,8 @@
 
 <generatorConfiguration>
     <!-- update to your location -->
-    <classPathEntry location="C:\Users\liuyang\.m2\repository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar" />
+    <classPathEntry
+            location="C:\Users\liuyang\.m2\repository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar"/>
 
     <context id="mysqlTables" targetRuntime="MyBatis3">
         <!-- database config -->
@@ -15,24 +16,25 @@
                         password="123123">
         </jdbcConnection>
 
-        <javaTypeResolver >
-            <property name="forceBigDecimals" value="false" />
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
         <!-- model location -->
         <javaModelGenerator targetPackage="com.lerr.demo.model.gen" targetProject="src/main/java">
-            <property name="enableSubPackages" value="true" />
-            <property name="trimStrings" value="true" />
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!-- mapper location -->
-        <sqlMapGenerator targetPackage="mybatis.mapper.xml.gen"  targetProject="src/main/resources">
-            <property name="enableSubPackages" value="true" />
+        <sqlMapGenerator targetPackage="mybatis.mapper.xml.gen" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
         <!-- dao location -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.lerr.demo.mapper.dao.gen"  targetProject="src/main/java">
-            <property name="enableSubPackages" value="true" />
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.lerr.demo.mapper.dao.gen"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
         <!-- where all your table -->

@@ -2,7 +2,9 @@ package com.lerr.demo.mapper.dao.gen;
 
 import com.lerr.demo.model.gen.Person;
 import com.lerr.demo.model.gen.PersonExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface PersonMapper {

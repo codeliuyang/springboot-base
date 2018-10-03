@@ -6,6 +6,11 @@ import javax.validation.constraints.NotNull;
 
 /**
  * person vo
+ *
+ * @Data Lombok的注解
+ *
+ *
+ * @author yangliu
  */
 @Data
 public class PersonVo {
