@@ -14,7 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * 这是Swagger2的配置文件，必须需要此文件
  * Swagger与工程结合需要引入依赖，已在pom.xml中表明，一共2个依赖
  * <p>
- * swagger2文档的默认地址是 /swagger-ui.html
+ * swagger2文档的默认地址是 .../swagger-ui.html
  * <p>
  * https://swagger.io/
  *

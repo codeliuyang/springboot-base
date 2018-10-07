@@ -15,6 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
+
+/**
+ * PersonApi 用户模块相关的API
+ *
+ * @author yangliu
+ */
 @Api(value = "/persons", tags = "用户模块")
 @RestController
 @RequestMapping("/persons")

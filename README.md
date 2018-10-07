@@ -6,7 +6,10 @@ Spring Boot 2.0.4.RELEASE
 
 MyBatis
 
-LogBack
+Slf4j + LogBack
+
+## Base Plugins
+Lombok
 
 ## Structure Of Project
 ````
@@ -16,6 +19,7 @@ LogBack
       |- /com/lerr/demo
         |- /api
         |- /config
+          |- RestTemplate.java
           |- Swagger2.java
         |- /dto
         |- /mapper/dao
@@ -63,4 +67,11 @@ MyBatis Generator 能够对应每张表生成对应的实体、mapper xml以及m
 ### Swagger
 Swagger现在常用于API管理。与工程结合起来，非常方便。只要工程提供服务，则可以访问。
 
-同时也能规范项目的API文档和整理。不用再另起excel或者word这种东西了。
+同时也能规范项目的API文档和整理。不用再另起excel或者word这种文档之类的东西了。
+
+### 日志框架
+日志框架选择的是Slf4j+LogBack，Logback作为具体的日志实现。配置文件即为```logback-spring.xml```。
+配置了日志在控制台的打印，以及日志文件的生成。
+
+### RestTemplate
+RestTemplateConfig，配置RestTemplate
