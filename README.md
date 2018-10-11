@@ -9,7 +9,7 @@ MyBatis
 Slf4j + LogBack
 
 ## Base Plugins
-Lombok
+Lombok  简化工程内模板化的代码，用注解替代(@Data @Slf4j ...)
 
 ## Structure Of Project
 ````
