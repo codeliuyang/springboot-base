@@ -1,15 +1,15 @@
 # springboot-base
 If you need a project to develop as a base project. This demo will be a good choice.That is what I want to provide.
 
-## Base Framework
-Spring Boot 2.0.4.RELEASE
+## Related Framework
+- Spring Boot 2.0.4.RELEASE
+- MyBatis
+- Slf4j + LogBack
+- Druid
+- Swagger
 
-MyBatis
-
-Slf4j + LogBack
-
-## Base Plugins
-Lombok  简化工程内模板化的代码，用注解替代(@Data @Slf4j ...)
+## Related Plugins
+- Lombok  简化工程内模板化的代码，用注解替代(@Data @Slf4j ...)
 
 ## Structure Of Project
 ````
