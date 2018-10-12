@@ -1,15 +1,15 @@
 # springboot-base
 If you need a project to develop as a base project. This demo will be a good choice.That is what I want to provide.
 
-## Base Framework
-Spring Boot 2.0.4.RELEASE
+## Related Framework
+- Spring Boot 2.0.4.RELEASE
+- MyBatis
+- Slf4j + LogBack
+- Druid
+- Swagger
 
-MyBatis
-
-Slf4j + LogBack
-
-## Base Plugins
-Lombok
+## Related Plugins
+- Lombok  简化工程内模板化的代码，用注解替代(@Data @Slf4j ...)
 
 ## Structure Of Project
 ````
@@ -64,10 +64,28 @@ MyBatis Generator 能够对应每张表生成对应的实体、mapper xml以及m
 
 如果你是IDEA开发，直接找到mybatis-generator:generate双击即可
 
+### Druid
+工程配置Druid代替默认的数据源，能够提供页面监控数据源，以及sql等。
+
+现在官方也提供了Spring Boot集成的方式，而且简化配置
+
+GitHub 搜索关键词 ```druid-spring-boot-starter```
+
+工程启动后访问地址
+```
+../druid
+```
+
+
 ### Swagger
 Swagger现在常用于API管理。与工程结合起来，非常方便。只要工程提供服务，则可以访问。
 
 同时也能规范项目的API文档和整理。不用再另起excel或者word这种文档之类的东西了。
+
+访问路径为 
+```
+../swagger-ui.html
+```
 
 ### 日志框架
 日志框架选择的是Slf4j+LogBack，Logback作为具体的日志实现。配置文件即为```logback-spring.xml```。

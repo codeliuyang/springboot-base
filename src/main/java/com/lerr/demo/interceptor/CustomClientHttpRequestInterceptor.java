@@ -1,8 +1,7 @@
 package com.lerr.demo.interceptor;
 
 import com.google.common.base.Charsets;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
@@ -17,9 +16,8 @@ import java.io.InputStreamReader;
  *
  * @author yangliu
  */
+@Slf4j
 public class CustomClientHttpRequestInterceptor implements ClientHttpRequestInterceptor {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(CustomClientHttpRequestInterceptor.class);
 
     @Override
     public ClientHttpResponse intercept(HttpRequest httpRequest, byte[] bytes, ClientHttpRequestExecution clientHttpRequestExecution) throws IOException {
@@ -31,12 +29,12 @@ public class CustomClientHttpRequestInterceptor implements ClientHttpRequestInte
 
 
     private void traceRequest(HttpRequest request, byte[] bytes) {
-        LOGGER.info("===========================request begin================================================");
-        LOGGER.info("URI         : {}", request.getURI());
-        LOGGER.info("Method      : {}", request.getMethod());
-        LOGGER.info("Headers     : {}", request.getHeaders());
-        LOGGER.info("Request body: {}", new String(bytes, Charsets.UTF_8));
-        LOGGER.info("==========================request end================================================");
+        log.info("===========================request begin================================================");
+        log.info("URI         : {}", request.getURI());
+        log.info("Method      : {}", request.getMethod());
+        log.info("Headers     : {}", request.getHeaders());
+        log.info("Request body: {}", new String(bytes, Charsets.UTF_8));
+        log.info("==========================request end================================================");
     }
 
     private void traceResponse(ClientHttpResponse response) throws IOException {
@@ -48,12 +46,12 @@ public class CustomClientHttpRequestInterceptor implements ClientHttpRequestInte
             inputStringBuilder.append('\n');
             line = bufferedReader.readLine();
         }
-        LOGGER.info("============================response begin==========================================");
-        LOGGER.info("Status code  : {}", response.getStatusCode());
-        LOGGER.info("Status text  : {}", response.getStatusText());
-        LOGGER.info("Headers      : {}", response.getHeaders());
-        LOGGER.info("Response body: {}", inputStringBuilder.toString());
-        LOGGER.info("=======================response end=================================================");
+        log.info("============================response begin==========================================");
+        log.info("Status code  : {}", response.getStatusCode());
+        log.info("Status text  : {}", response.getStatusText());
+        log.info("Headers      : {}", response.getHeaders());
+        log.info("Response body: {}", inputStringBuilder.toString());
+        log.info("=======================response end=================================================");
     }
 
 

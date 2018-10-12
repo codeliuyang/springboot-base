@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
 /**
  * 主启动类
@@ -22,4 +23,5 @@ public class SpringbootBaseDemoApplication {
         SpringApplication.run(SpringbootBaseDemoApplication.class, args);
         log.info("project is running, see api doc at http://localhost:8090/demo/swagger-ui.html");
     }
+
 }
