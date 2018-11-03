@@ -4,6 +4,7 @@ If you need a project to develop as a base project. This demo will be a good cho
 ## Related Framework
 - Spring Boot 2.0.4.RELEASE
 - MyBatis
+- MyBatis PageHelper
 - Slf4j + LogBack
 - Druid
 - Swagger
@@ -51,6 +52,7 @@ SpringBoot简化了很多相关的工程配置，几乎不需要任何xml配置�
 
 ### MyBatis
 本工程既支持xml写法，同时也支持注解的方法，看适用场景即可
+使用PageHelper支持分页
 
 - @MapperScan 扫描了mapper类所在的位置，即interface
 - mybatis.mapper-locations 定义了mapper xml的位置
