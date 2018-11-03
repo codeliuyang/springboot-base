@@ -1,7 +1,9 @@
 package com.lerr.demo.api;
 
 
+import com.github.pagehelper.PageInfo;
 import com.lerr.demo.dto.PersonDto;
+import com.lerr.demo.model.gen.Person;
 import com.lerr.demo.service.PersonService;
 import com.lerr.demo.vo.PersonVo;
 import io.swagger.annotations.Api;
@@ -46,6 +48,14 @@ public class PersonApi {
                 personDto);
         return personDto;
     }
+
+    @ApiOperation(value="分页查询persons", notes = "pageHelper使用分页")
+    @GetMapping("")
+    public PageInfo<Person> getPersonsInPage(Integer pageNum, Integer pageSize){
+        PageInfo<Person> personPageInfo = personService.getPersonsInPage(pageNum, pageSize);
+        return personPageInfo;
+    }
+
 
 
 }
