@@ -1,5 +1,6 @@
 package com.lerr.demo.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -24,13 +25,16 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class Swagger2 {
 
+    @Value("${swagger.base.package}")
+    private String swaggerBasePackage;
+
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
                 // 指定controller存放的目录路径
-                .apis(RequestHandlerSelectors.basePackage("com.lerr.demo.api"))
+                .apis(RequestHandlerSelectors.basePackage(swaggerBasePackage))
                 .paths(PathSelectors.any())
                 .build();
     }
