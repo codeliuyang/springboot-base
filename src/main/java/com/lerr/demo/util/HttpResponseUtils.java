@@ -17,13 +17,11 @@ import java.io.PrintWriter;
 public class HttpResponseUtils {
 
     public static void write(HttpServletResponse response, Object o) {
-        try {
-            response.setContentType("application/json; charset=utf-8");
-            PrintWriter out = response.getWriter();
+        response.setContentType("application/json; charset=utf-8");
+        try(PrintWriter out = response.getWriter();){
             //json返回
             out.println(JSON.toJSONString(o, SerializerFeature.WriteMapNullValue));
             out.flush();
-            out.close();
         } catch (Exception e) {
             log.error("e={}", e);
         }

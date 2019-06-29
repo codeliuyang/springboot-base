@@ -26,7 +26,7 @@ public class JwtTokenUtil {
     /**
      * token前缀
      */
-    public static final String TOKEN_PREFIX = "animal";
+    public static final String TOKEN_PREFIX = "jwttoken-";
 
     /**
      * 秘钥

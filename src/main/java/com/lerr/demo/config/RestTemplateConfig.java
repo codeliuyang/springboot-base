@@ -27,12 +27,6 @@ public class RestTemplateConfig {
     @Autowired
     private RestTemplateBuilder restTemplateBuilder;
 
-    //another method to instantiate RestTemplate
-//    @Bean
-//    public RestTemplate restTemplate(){
-//        return restTemplateBuilder.build();
-//    }
-
     /**
      * 实例化restTemplate，因为在CustomClientHttpRequestInterceptor中有读取过response的IO，因此实例化比较复杂
      *
