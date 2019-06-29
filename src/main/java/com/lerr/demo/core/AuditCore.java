@@ -1,7 +1,7 @@
 package com.lerr.demo.core;
 
 
-import com.little.animal.security.CurrentLoginUserInfo;
+import com.lerr.demo.security.CurrentLoginUserInfo;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.InvocationTargetException;
@@ -10,7 +10,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * -
+ * 对实体进行的更新和创建，进行赋值
  *
  * @auther: yangliu
  * create date: 08-06-2019

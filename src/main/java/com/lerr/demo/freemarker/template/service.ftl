@@ -1,9 +1,9 @@
-package com.little.animal.service;
+package ${packageName}.service;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
-import com.little.animal.dto.${domainNameUpper}DTO;
-import com.little.animal.model.gen.${domainNameUpper};
+import ${packageName}.dto.${domainNameUpper}DTO;
+import ${packageName}.model.gen.${domainNameUpper};
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ public interface ${domainNameUpper}Service {
 
     ${domainNameUpper} getById(Long ${domainNameLower}DTO);
 
-    ${domainNameUpper} getByQuery(${domainNameUpper}DTO ${domainNameLower}DTO);
+    ${domainNameUpper} getByQuery(${domainNameUpper}DTO query);
 
     List<${domainNameUpper}> get${domainNameUpper}s(${domainNameUpper}DTO query);
 

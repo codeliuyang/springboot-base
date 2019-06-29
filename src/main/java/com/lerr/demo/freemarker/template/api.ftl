@@ -1,9 +1,10 @@
-package com.little.animal.api;
+package ${packageName}.api;
 
 import com.github.pagehelper.PageInfo;
-import com.little.animal.dto.${domainNameUpper}DTO;
-import com.little.animal.model.gen.${domainNameUpper};
-import com.little.animal.service.${domainNameUpper}Service;
+import com.lerr.demo.core.HttpResult;
+import ${packageName}.dto.${domainNameUpper}DTO;
+import ${packageName}.model.gen.${domainNameUpper};
+import ${packageName}.service.${domainNameUpper}Service;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

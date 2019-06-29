@@ -93,5 +93,20 @@ Swagger现在常用于API管理。与工程结合起来，非常方便。只要�
 日志框架选择的是Slf4j+LogBack，Logback作为具体的日志实现。配置文件即为```logback-spring.xml```。
 配置了日志在控制台的打印，以及日志文件的生成。
 
+同时控制不同级别的日志打印到不同的日志文件里面去
+
 ### RestTemplate
 RestTemplateConfig，配置RestTemplate
+
+### Spring Security
+工程利用security框架进行验证授权，同时使用jwtToken进行前后端的验证
+目前已配置默认登陆用户名和密码
+```
+{
+	"username":"admin",
+	"password":"1231234"
+}
+```
+
+### Freemarker
+工程利用freemarker进行api, service, service.impl 相关类的生成

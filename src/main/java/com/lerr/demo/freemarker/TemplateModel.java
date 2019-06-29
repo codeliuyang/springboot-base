@@ -15,5 +15,6 @@ public class TemplateModel {
 
     private String comment;
     private String domainNameUpper;
+    private String packageName;
 
 }

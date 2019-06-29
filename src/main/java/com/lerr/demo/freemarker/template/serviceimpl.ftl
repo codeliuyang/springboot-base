@@ -1,13 +1,13 @@
-package com.little.animal.service.impl;
+package ${packageName}.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.little.animal.core.AuditCore;
-import com.little.animal.dto.${domainNameUpper}DTO;
-import com.little.animal.mapper.dao.gen.${domainNameUpper}Mapper;
-import com.little.animal.model.gen.${domainNameUpper};
-import com.little.animal.model.gen.${domainNameUpper}Criteria;
-import com.little.animal.service.${domainNameUpper}Service;
+import ${packageName}.core.AuditCore;
+import ${packageName}.dto.${domainNameUpper}DTO;
+import ${packageName}.mapper.gen.${domainNameUpper}Mapper;
+import ${packageName}.model.gen.${domainNameUpper};
+import ${packageName}.model.gen.${domainNameUpper}Criteria;
+import ${packageName}.service.${domainNameUpper}Service;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,8 +35,8 @@ public class ${domainNameUpper}ServiceImpl implements ${domainNameUpper}Service 
     @Override
     public ${domainNameUpper} getByQuery(${domainNameUpper}DTO ${domainNameLower}DTO) {
         ${domainNameUpper}Criteria ${domainNameLower}Criteria = new ${domainNameUpper}Criteria();
-        ${domainNameLower}Criteria.createCriteria()
-                .andDelFlagEqualTo(0);
+        ${domainNameUpper}Criteria.Criteria criteria = ${domainNameLower}Criteria.createCriteria();
+        criteria.andDelFlagEqualTo(0);
         List<${domainNameUpper}> ${domainNameLower}s = this.get${domainNameUpper}s(${domainNameLower}DTO);
         if(CollectionUtils.isEmpty(${domainNameLower}s)){
             return null;
@@ -48,8 +48,8 @@ public class ${domainNameUpper}ServiceImpl implements ${domainNameUpper}Service 
     @Override
     public List<${domainNameUpper}> get${domainNameUpper}s(${domainNameUpper}DTO query) {
         ${domainNameUpper}Criteria ${domainNameLower}Criteria = new ${domainNameUpper}Criteria();
-        ${domainNameLower}Criteria.createCriteria()
-                .andDelFlagEqualTo(0);
+        ${domainNameUpper}Criteria.Criteria criteria = ${domainNameLower}Criteria.createCriteria();
+        criteria.andDelFlagEqualTo(0);
         List<${domainNameUpper}> ${domainNameLower}s = ${domainNameLower}Mapper.selectByExample(${domainNameLower}Criteria);
         return ${domainNameLower}s;
     }

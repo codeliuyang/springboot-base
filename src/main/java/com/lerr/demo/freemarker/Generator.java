@@ -17,8 +17,8 @@ import java.util.Map;
  */
 public class Generator {
 
-    private static final String TEMPLATE_ORIGIN_PATH = "src/main/java/com/little/animal/freemarker/template";
-    private static final String TEMPLATE_OUTPUT_PATH = "src/main/java/com/little/animal/freemarker/out";
+    private static final String TEMPLATE_ORIGIN_PATH = "src/main/java/com/lerr/demo/freemarker/template";
+    private static final String TEMPLATE_OUTPUT_PATH = "src/main/java/com/lerr/demo/freemarker/out";
 
     public static void main(String[] args){
         Configuration configuration = new Configuration();
@@ -27,7 +27,7 @@ public class Generator {
             outputDir.mkdir();
         }
         List<TemplateModel> waitToGenerate = new ArrayList<>();
-        waitToGenerate.add(new TemplateModel("积分变化记录模块", "PointChangeRecord"));
+        waitToGenerate.add(new TemplateModel("用户模块", "Person", "com.lerr.demo"));
         for(TemplateModel model: waitToGenerate){
             String upper = model.getDomainNameUpper();
             File apiFile = new File(TEMPLATE_OUTPUT_PATH + "/" + upper + "Api.java");
@@ -36,6 +36,7 @@ public class Generator {
             dataMap.put("domainNameAllLower", model.getDomainNameUpper().toLowerCase());
             dataMap.put("domainNameUpper", model.getDomainNameUpper());
             dataMap.put("domainNameLower", firstCharToLower(model.getDomainNameUpper()));
+            dataMap.put("packageName", model.getPackageName());
             try(Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(apiFile)));) {
                 configuration.setDirectoryForTemplateLoading(new File(TEMPLATE_ORIGIN_PATH));
                 Template template = configuration.getTemplate("api.ftl");
