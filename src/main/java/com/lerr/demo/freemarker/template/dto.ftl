@@ -1,19 +1,16 @@
 package com.lerr.demo.dto;
 
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Builder;
 import lombok.Data;
+${ims}
 
 @Data
 @Builder
+@ApiModel(value = "${tableComment}")
 public class ${domainNameUpper}DTO {
 
-    @ApiModelProperty(value = "", example = "0")
-    private Long id;
-
-    @ApiModelProperty(value = "", example = "")
-    private String name;
-
-    @ApiModelProperty(value = "", example = "")
-    private Date birth;
-
+${propertiesInfo}
 }

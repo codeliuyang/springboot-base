@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <!-- 这个的存在是为了生成DTO，其实就是去除某些字段 -->
+    <!-- update to your location -->
 
     <context id="mysqlTables" targetRuntime="MyBatis3">
 
@@ -25,7 +25,6 @@
             <property name="suppressAllComments" value="true" />
         </commentGenerator>
 
-
         <!-- database config -->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
                         connectionURL="jdbc:mysql://localhost:3306/mybatis"
@@ -38,127 +37,25 @@
         </javaTypeResolver>
 
         <!-- model location -->
-        <javaModelGenerator targetPackage="com.lerr.demo.dto" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.lerr.demo.model.gen" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <!--&lt;!&ndash; mapper location &ndash;&gt;-->
-        <!--<sqlMapGenerator targetPackage="mybatis.mapper.xml.gen" targetProject="src/main/resources">-->
-            <!--<property name="enableSubPackages" value="true"/>-->
-        <!--</sqlMapGenerator>-->
+        <!-- mapper location -->
+        <sqlMapGenerator targetPackage="mybatis.mapper.xml.gen" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
 
-        <!--&lt;!&ndash; dao location &ndash;&gt;-->
-        <!--<javaClientGenerator type="XMLMAPPER" targetPackage="com.little.animal.mapper.dao.gen"-->
-                             <!--targetProject="src/main/java">-->
-            <!--<property name="enableSubPackages" value="true"/>-->
-        <!--</javaClientGenerator>-->
+        <!-- dao location -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.lerr.demo.mapper.gen"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
 
         <!-- where all your table -->
-        <!--<table tableName="adopt_record" domainObjectName="AdoptRecordDTO">-->
-            <!--<generatedKey column="id" sqlStatement="MySql" identity="true" />-->
-            <!--<ignoreColumn column="del_flag"/>-->
-            <!--<ignoreColumn column="create_time"/>-->
-            <!--<ignoreColumn column="create_user"/>-->
-            <!--<ignoreColumn column="update_time"/>-->
-            <!--<ignoreColumn column="update_user"/>-->
-        <!--</table>-->
-        <table tableName="person" domainObjectName="PersonDTO">
-            <generatedKey column="id" sqlStatement="MySql" identity="true" />
-            <ignoreColumn column="del_flag"/>
-            <ignoreColumn column="create_time"/>
-            <ignoreColumn column="create_user"/>
-            <ignoreColumn column="update_time"/>
-            <ignoreColumn column="update_user"/>
+        <table tableName="person" domainObjectName="Person">
         </table>
-        <!--<table tableName="gtc_record" domainObjectName="GtcRecordDTO">-->
-            <!--<generatedKey column="id" sqlStatement="MySql" identity="true" />-->
-            <!--<ignoreColumn column="del_flag"/>-->
-            <!--<ignoreColumn column="create_time"/>-->
-            <!--<ignoreColumn column="create_user"/>-->
-            <!--<ignoreColumn column="update_time"/>-->
-            <!--<ignoreColumn column="update_user"/>-->
-        <!--</table>-->
-        <!--<table tableName="identification_info" domainObjectName="IdentificationInfoDTO">-->
-            <!--<generatedKey column="id" sqlStatement="MySql" identity="true" />-->
-            <!--<ignoreColumn column="del_flag"/>-->
-            <!--<ignoreColumn column="create_time"/>-->
-            <!--<ignoreColumn column="create_user"/>-->
-            <!--<ignoreColumn column="update_time"/>-->
-            <!--<ignoreColumn column="update_user"/>-->
-        <!--</table>-->
-        <!--<table tableName="lucky_record" domainObjectName="LuckyRecordDTO">-->
-            <!--<generatedKey column="id" sqlStatement="MySql" identity="true" />-->
-            <!--<ignoreColumn column="del_flag"/>-->
-            <!--<ignoreColumn column="create_time"/>-->
-            <!--<ignoreColumn column="create_user"/>-->
-            <!--<ignoreColumn column="update_time"/>-->
-            <!--<ignoreColumn column="update_user"/>-->
-        <!--</table>-->
-        <!--<table tableName="point_charge_record" domainObjectName="PointChargeRecordDTO">-->
-            <!--<generatedKey column="id" sqlStatement="MySql" identity="true" />-->
-            <!--<ignoreColumn column="del_flag"/>-->
-            <!--<ignoreColumn column="create_time"/>-->
-            <!--<ignoreColumn column="create_user"/>-->
-            <!--<ignoreColumn column="update_time"/>-->
-            <!--<ignoreColumn column="update_user"/>-->
-        <!--</table>-->
-        <!--<table tableName="point_transfer_record" domainObjectName="PointTransferRecordDTO">-->
-            <!--<generatedKey column="id" sqlStatement="MySql" identity="true" />-->
-            <!--<ignoreColumn column="del_flag"/>-->
-            <!--<ignoreColumn column="create_time"/>-->
-            <!--<ignoreColumn column="create_user"/>-->
-            <!--<ignoreColumn column="update_time"/>-->
-            <!--<ignoreColumn column="update_user"/>-->
-        <!--</table>-->
-        <!--<table tableName="sell_record" domainObjectName="SellRecordDTO">-->
-            <!--<generatedKey column="id" sqlStatement="MySql" identity="true" />-->
-            <!--<ignoreColumn column="del_flag"/>-->
-            <!--<ignoreColumn column="create_time"/>-->
-            <!--<ignoreColumn column="create_user"/>-->
-            <!--<ignoreColumn column="update_time"/>-->
-            <!--<ignoreColumn column="update_user"/>-->
-        <!--</table>-->
-        <!--<table tableName="user" domainObjectName="UserDTO">-->
-            <!--<generatedKey column="id" sqlStatement="MySql" identity="true" />-->
-            <!--<ignoreColumn column="del_flag"/>-->
-            <!--<ignoreColumn column="create_time"/>-->
-            <!--<ignoreColumn column="create_user"/>-->
-            <!--<ignoreColumn column="update_time"/>-->
-            <!--<ignoreColumn column="update_user"/>-->
-        <!--</table>-->
-        <!--<table tableName="user_account" domainObjectName="UserAccountDTO">-->
-            <!--<generatedKey column="id" sqlStatement="MySql" identity="true" />-->
-            <!--<ignoreColumn column="del_flag"/>-->
-            <!--<ignoreColumn column="create_time"/>-->
-            <!--<ignoreColumn column="create_user"/>-->
-            <!--<ignoreColumn column="update_time"/>-->
-            <!--<ignoreColumn column="update_user"/>-->
-        <!--</table>-->
-        <!--<table tableName="user_wallet" domainObjectName="UserWalletDTO">-->
-            <!--<generatedKey column="id" sqlStatement="MySql" identity="true" />-->
-            <!--<ignoreColumn column="del_flag"/>-->
-            <!--<ignoreColumn column="create_time"/>-->
-            <!--<ignoreColumn column="create_user"/>-->
-            <!--<ignoreColumn column="update_time"/>-->
-            <!--<ignoreColumn column="update_user"/>-->
-        <!--</table>-->
-        <!--<table tableName="work_order" domainObjectName="WorkOrderDTO">-->
-            <!--<generatedKey column="id" sqlStatement="MySql" identity="true" />-->
-            <!--<ignoreColumn column="del_flag"/>-->
-            <!--<ignoreColumn column="create_time"/>-->
-            <!--<ignoreColumn column="create_user"/>-->
-            <!--<ignoreColumn column="update_time"/>-->
-            <!--<ignoreColumn column="update_user"/>-->
-        <!--</table>-->
-        <!--<table tableName="point_change_record" domainObjectName="PointChangeRecordDTO">-->
-        <!--<generatedKey column="id" sqlStatement="MySql" identity="true" />-->
-        <!--<ignoreColumn column="del_flag"/>-->
-        <!--<ignoreColumn column="create_time"/>-->
-        <!--<ignoreColumn column="create_user"/>-->
-        <!--<ignoreColumn column="update_time"/>-->
-        <!--<ignoreColumn column="update_user"/>-->
-        <!--</table>-->
 
     </context>
 </generatorConfiguration>

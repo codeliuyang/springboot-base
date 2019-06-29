@@ -1,23 +1,22 @@
 package com.lerr.demo.dto;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Builder;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.util.Date;
 
 @Data
 @Builder
-public class PersonDTO implements Serializable {
+@ApiModel(value = "用户")
+public class PersonDTO {
 
-    @ApiModelProperty(value = "", example = "0")
+    @ApiModelProperty(value = "主键")
     private Long id;
-
-    @ApiModelProperty(value = "", example = "")
+    @ApiModelProperty(value = "姓名")
     private String name;
-
-    @ApiModelProperty(value = "", example = "")
+    @ApiModelProperty(value = "出生日期")
     private Date birth;
 
 }
