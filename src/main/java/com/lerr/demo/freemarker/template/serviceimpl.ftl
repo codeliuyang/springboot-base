@@ -50,6 +50,7 @@ public class ${domainNameUpper}ServiceImpl implements ${domainNameUpper}Service 
         ${domainNameUpper}Criteria ${domainNameLower}Criteria = new ${domainNameUpper}Criteria();
         ${domainNameUpper}Criteria.Criteria criteria = ${domainNameLower}Criteria.createCriteria();
         criteria.andDelFlagEqualTo(0);
+        ${domainNameLower}Criteria.setOrderByClause("create_time desc");
         List<${domainNameUpper}> ${domainNameLower}s = ${domainNameLower}Mapper.selectByExample(${domainNameLower}Criteria);
         return ${domainNameLower}s;
     }
