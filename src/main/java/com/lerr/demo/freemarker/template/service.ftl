@@ -15,7 +15,7 @@ import java.util.List;
  */
 public interface ${domainNameUpper}Service {
 
-    ${domainNameUpper} getById(Long ${domainNameLower}DTO);
+    ${domainNameUpper} getById(Long Id);
 
     ${domainNameUpper} getByQuery(${domainNameUpper}DTO query);
 
@@ -25,8 +25,8 @@ public interface ${domainNameUpper}Service {
 
     Long create${domainNameUpper}(${domainNameUpper}DTO ${domainNameLower}DTO);
 
-    Long update${domainNameUpper}(${domainNameUpper}DTO ${domainNameLower}DTO, Long ${domainNameLower}Id);
+    Long update${domainNameUpper}(${domainNameUpper}DTO ${domainNameLower}DTO, Long Id);
 
-    void remove${domainNameUpper}(Long ${domainNameLower}Id);
+    void remove${domainNameUpper}(Long Id);
 
 }
