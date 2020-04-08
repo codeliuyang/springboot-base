@@ -28,8 +28,8 @@ public class ${domainNameUpper}ServiceImpl implements ${domainNameUpper}Service 
     private ${domainNameUpper}Mapper ${domainNameLower}Mapper;
 
     @Override
-    public ${domainNameUpper} getById(Long ${domainNameLower}Id) {
-        return ${domainNameLower}Mapper.selectByPrimaryKey(${domainNameLower}Id);
+    public ${domainNameUpper} getById(Long Id) {
+        return ${domainNameLower}Mapper.selectByPrimaryKey(Id);
     }
 
     @Override
@@ -68,22 +68,22 @@ public class ${domainNameUpper}ServiceImpl implements ${domainNameUpper}Service 
         BeanUtils.copyProperties(${domainNameLower}DTO, ${domainNameLower});
         AuditCore.setAuditPropsForCreated(${domainNameLower});
         ${domainNameLower}Mapper.insert(${domainNameLower});
-        return ${domainNameLower}.get${domainNameUpper}Id();
+        return ${domainNameLower}.getId();
     }
 
     @Override
-    public Long update${domainNameUpper}(${domainNameUpper}DTO ${domainNameLower}DTO, Long ${domainNameLower}Id) {
+    public Long update${domainNameUpper}(${domainNameUpper}DTO ${domainNameLower}DTO, Long Id) {
         ${domainNameUpper} ${domainNameLower} = new ${domainNameUpper}();
         BeanUtils.copyProperties(${domainNameLower}DTO, ${domainNameLower});
-        ${domainNameLower}.set${domainNameUpper}Id(${domainNameLower}Id);
+        ${domainNameLower}.setId(${domainNameLower}Id);
         AuditCore.setAuditPropsForUpdated(${domainNameLower});
         ${domainNameLower}Mapper.updateByPrimaryKeySelective(${domainNameLower});
-        return ${domainNameLower}.get${domainNameUpper}Id();
+        return ${domainNameLower}.getId();
     }
 
     @Override
-    public void remove${domainNameUpper}(Long ${domainNameLower}Id) {
-        ${domainNameUpper} ${domainNameLower} = ${domainNameLower}Mapper.selectByPrimaryKey(${domainNameLower}Id);
+    public void remove${domainNameUpper}(Long Id) {
+        ${domainNameUpper} ${domainNameLower} = ${domainNameLower}Mapper.selectByPrimaryKey(Id);
         ${domainNameLower}.setDelFlag(1);
         AuditCore.setAuditPropsForUpdated(${domainNameLower});
         ${domainNameLower}Mapper.updateByPrimaryKeySelective(${domainNameLower});
