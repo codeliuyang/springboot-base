@@ -49,7 +49,7 @@ public class ${domainNameUpper}Api {
 
     @PutMapping("")
     public HttpResult<Long> update${domainNameUpper}(@RequestBody ${domainNameUpper}DTO ${domainNameLower}DTO){
-        return HttpResult.success(${domainNameLower}Service.update${domainNameUpper}(${domainNameLower}DTO, ${domainNameLower}DTO.get${domainNameUpper}Id()));
+        return HttpResult.success(${domainNameLower}Service.update${domainNameUpper}(${domainNameLower}DTO, ${domainNameLower}DTO.getId()));
     }
 
     @DeleteMapping("/{id}")
