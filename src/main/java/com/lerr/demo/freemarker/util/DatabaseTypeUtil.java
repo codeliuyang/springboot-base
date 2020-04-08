@@ -12,6 +12,8 @@ public class DatabaseTypeUtil {
         switch (databaseType){
             case "BIGINT":
                 return "java.lang.Long,Long,0";
+            case "INTEGER":
+                return "java.lang.Integer,Integer,0";
             case "VARCHAR":
                 return "java.lang.String,String,0";
             case "DATETIME":
